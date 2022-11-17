@@ -3,14 +3,14 @@ import Productcontext from './productContext'
 
 const ProductState = (props) => {
 
-
+  const host = "http://localhost:9000"
   const productIntial = [];
   const [products, setProducts] = useState(productIntial)
 
 
   const getProducts = async () => {
 
-    const response = await fetch(`http://localhost:9000/products`, {
+    const response = await fetch(`${host}/api/fetchallproducts`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -21,15 +21,15 @@ const ProductState = (props) => {
   }
 
 
-  const addProduct = async (name, quntity) => {
+  const addProduct = async (name, quantity) => {
 
-    const response = await fetch(`http://localhost:9000/products/create`, {
+    const response = await fetch(`${host}/api/addproduct`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
 
       },
-      body: JSON.stringify({ name, quntity })
+      body: JSON.stringify({ name, quantity })
     });
 
     const product = await response.json();
@@ -39,7 +39,7 @@ const ProductState = (props) => {
 
   const deleteProduct = async (id) => {
 
-    const response = await fetch(`http://localhost:9000/products/${id}`, {
+    const response = await fetch(`${host}/api/updateproduct/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -54,15 +54,15 @@ const ProductState = (props) => {
 
   // Edit a Note
 
-  const editProduct = async (id, name, quntity) => {
+  const editProduct = async (id, name, quantity) => {
     // api call
-    const response = await fetch(`http://localhost:9000/products/update/${id}`, {
-      method: 'PATCH',
+    const response = await fetch(`h${host}/api/deleteproduct/${id}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
 
       },
-      body: JSON.stringify({ name, quntity })
+      body: JSON.stringify({ name, quantity })
     });
     const json = await response.json();
     console.log(json)
@@ -72,7 +72,7 @@ const ProductState = (props) => {
       const element = newProducts[index];
       if (element._id === id) {
         newProducts[index].name = name;
-        newProducts[index].quntity = quntity;
+        newProducts[index].quntity = quantity;
      
         break;
       }

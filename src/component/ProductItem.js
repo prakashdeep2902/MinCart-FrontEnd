@@ -11,7 +11,7 @@ const ProductItem = (props) => {
         <>
             <div className="cart inline-flex flex-col w-auto h-auto m-2  p-3 border-8">
                 <p className='  flex text-2xl capitalize mt-3 font-bold'> Product:  {product.name}</p>
-                <p className=' flex text-2xl capitalize mt-3 mb-3 justify-center' > quantity: {product.quntity}</p>
+                <p className=' flex text-2xl capitalize mt-3 mb-3 justify-center' > quantity: {product.quantity}</p>
                 <div className=' mt-auto flex  justify-around '>
                     <i className="fa-solid fa-trash  text-gray-700  text-2xl cursor-pointer" onClick={() => { deleteProduct(product._id) }}></i>
                     <i className="fa-solid fa-pen-to-square text-2xl text-green-500 cursor-pointer " onClick={() => {
