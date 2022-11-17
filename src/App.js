@@ -7,7 +7,7 @@ const App = () => {
     <>
 
       <ProductState>
-        <Home />
+        <Home />    
       </ProductState>
 
 
