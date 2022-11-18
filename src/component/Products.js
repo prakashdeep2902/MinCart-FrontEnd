@@ -21,7 +21,7 @@ const Products = () => {
     const updateProduct = (currentProduct) => {
 
         ref.current.click();
-        setProduct({ id: currentProduct._id, ename: currentProduct.name, equntity: currentProduct.quntity })
+        setProduct({ id: currentProduct._id, ename: currentProduct.name, equntity: currentProduct.quantity })
 
     }
     const handleClick = (e) => {
